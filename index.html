@@ -1,0 +1,2934 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>同城主页</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/tong.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+		text-decoration: none;
+		list-style: none;
+	}
+	/*顶部导航…………………………………………………………………………*/
+	.topa{
+		background: #545652;
+		width: 100%;
+		height: 28px;
+		display: flex;
+		position: relative;
+	}
+	.topa ul{
+		line-height: 25px;
+	}
+	/*顶部左边导航 */
+	.topa li{
+		display: inline-block;
+		font-size: 12px;
+		text-indent: 15px;
+	}
+	.topa a{
+		color: #D5D5D5;
+		zoom:1;/* 表示缩放比例，zoom本身就是属性 让网页实现IE7中的放大缩小功能。*/
+	}
+	/*顶部右边导航*/
+	.topa ul:nth-child(2){
+		position: absolute;
+		right: 40px;		
+	}
+	/*头部LOGO………………………………………………………………………………*/
+	.topb{
+		width: 100%;
+		height: 70px;
+		background:#F6F5F2;
+		position: relative;
+	}
+	/*头部LOGO内容*/
+	.topb .topb-center{
+		width: 1000px;
+		height: 100%;
+		position: relative;
+		left: 50%;
+		margin: 0 -500px;
+		/*display: flex;*/
+		float: left;
+	}
+	.topb .topb-center h2 a{
+		color: #E85205;
+		font-family: "微软雅黑";
+		font-size: 27px;
+		line-height: 60px;
+	}
+	.topb .topb-center h2{
+		display: inline-block;
+		margin-top: 1px;
+		float: left;
+	}
+	.topb .topb-form{
+		width: 55px;
+		height: 25px;
+		background: #DEDEDE;
+		color: #333;
+		border: none;
+		font-family: "微软雅黑";
+		margin: 20px 20px;
+		border-radius: 4px;
+		display: inline-block;
+		float: left;
+	}
+	.topb-ul{
+		display: flex;
+	}
+	.topb li{
+		line-height: 65px;
+		text-indent: 15px;
+		font-size: 15px;
+	}
+	.topb li>a{
+		color: #643;
+	}
+	.topb .topb-in{
+		width: 210px;
+		margin-top: -45px;
+		height: 25px;
+		float: right;
+	}
+	/*内容区块…………………………………………………………………………*/
+	header{
+		width: 1000px;
+		height: 4000px;
+		/*border: solid 1px;	*/			
+		position: relative;
+		left: 50%;
+		margin: 30px -500px;
+		float: left;
+		overflow: hidden;
+		
+	}
+	/*整体左边*/
+	.head-left{
+		width: 670px;
+		height: 4000px;
+		float: left;
+		display: inline-block;
+		/*border: solid 1px red;*/
+		overflow: hidden;
+	}
+	/*整体右边*/
+	.head-right{
+		width: 310px;
+		height: 1800px;
+		float: right;
+		overflow: hidden;
+	}
+	/*轮播图区块……………………*/
+	header #head-left-topa{
+		width: 100%;
+		height: 250px;
+	}
+	header .swiper-wrapper>div{
+		width: 100px;
+		height: 100%;
+		border: solid 1px #fff;
+		text-align: center;
+	}
+	header .swiper-wrapper img{
+		width: 110px;
+	}
+	/*灰色背景内容*/
+	.head-topb{
+		width: 650px;
+		height: 120px;
+		background: #F6F5F2;
+		position: relative;
+		overflow: hidden;
+	}
+	.head-topb ul li:nth-child(1) a{ /*这里需要留一个空隙*/
+		color: #000;
+	}
+	.head-topb ul{
+		display: inline-block;
+		padding: 0 10px;
+		font-size: 12px;
+		float: left;
+		position: relative;
+	}
+	.head-topb ul li{
+		line-height: 25px;
+	}
+	.head-topb ul li a:hover{
+		background: #37a;
+		color: #fff;
+	}
+	/*音乐 音乐会等板块*/
+	/*音乐黑色文字*/
+	.nav-tabs li:nth-child(1){
+		margin-top: 10px;
+	}
+	/*音乐图文列表区…………………………*/
+	.yin{
+		margin-top: 20px;
+	}
+	.yin ul li{
+		width: 330px;
+		height: 120px;
+		display: inline-block;
+	}
+	/*左边图片*/
+	.yin>ul li div:nth-child(1){
+		width: 100px;
+	}
+	/*右边文本*/
+	.yin>ul li div:nth-child(2){
+		width: 220px;
+		font-size: 10px;
+		line-height: 21px;
+	}
+	.yin>ul li  div{
+		overflow: hidden;
+		display: inline-block;
+		height: 100%;
+	}
+	/*右侧滚动特效…………………………………………………………*/
+	#numobj{
+		width: 100%;
+		height: 500px;
+		overflow: hidden;		
+		margin: 0;
+		padding: 0;
+	}
+	#numobj ul li div:nth-child(1) img{
+		width: 60px;
+
+	}
+	#numobj ul li div:nth-child(2){
+		float: right;
+		width: 220px;
+	}	
+	#numobj1{
+		width: 100%;
+		height: 700px;
+		overflow: hidden;
+	}
+	#numobj1 li{
+		width: 100%;
+		height: 120px;
+		/*line-height: 20px;*/
+	}
+	#numobj1 li div{
+		display: inline-block;
+		float:left;
+		line-height: 21px;
+	}
+	/*第二组图*/
+	#numobj2{
+		width: 100%;
+		height: 700px;
+		overflow: hidden;
+	}
+	#numobj2 li{
+		width: 100%;
+		height: 120px;
+
+	}
+	#numobj2 li div{
+		display: inline-block;
+		float:left;
+	}
+	/*深圳活跃主办方*/
+	.right-nav{
+		width: 100%;
+	}
+	.right-nav li{
+		width: 100%;
+		height: 150px;
+		overflow: hidden;
+	}
+	.right-nav a{
+		line-height:30px;
+		float: left;
+	}	
+	.right-nav p{
+		display: inline-block;
+/*		border: solid 1px;*/
+		width: 250px;
+		height: 130px;
+		float:right;
+	}
+
+	.right-nav p a:nth-child(5){
+		font-size: 10px;
+	}
+	.right-nav p a:nth-child(7){
+		font-size: 10px;
+	}
+	/*右侧底部*/
+	/*更多发现*/
+	.right-sub a{
+		display: inline-block;
+		width: 150px;
+		height: 80px;
+		border: 1px solid #d0d0d0;
+		text-align: center;
+		line-height:30px;
+		float: left;
+		text-decoration: none;
+	}
+	.right-sub a:hover{
+		background: #E0E0E0;
+	}
+	/*联系我们*/
+	.right-em{
+		width:100%;
+		height: 30px;
+		margin-top: 130px;
+		border-bottom: 1px solid #ADADAD;
+	}
+	.right-em:hover{
+		background: #642100;
+		color: #fff;
+	}
+	.right-dou li{
+		width: 70px;
+		height: 100px;
+		display: inline-block;
+		text-align: center;
+	}
+	.right-dou li img{
+		width: 50px;
+	}
+
+	/*申请主办方*/
+	.right-bottom li{
+		display: inline-block;
+		margin: 0 5px;
+	}
+	/*底部版权声明*/
+	footer{
+		width: 1000px;
+		height: 30px;
+		border-top: 1px dotted #BEBEBE;
+		margin: 0 auto;
+		color:#9D9D9D;
+		font-size: 12px;
+	}
+	.foo-ul{
+		display: inline-block;
+		float: right;
+	}
+	.foo-ul li{
+		display: inline-block;
+	}
+</style>
+</head>
+<body>
+<!-- 顶部导航 -->
+	<div class="topa">
+		<ul>
+			<li><a href="#">豆瓣</a></li>
+			<li><a href="#">读书</a></li>
+			<li><a href="#">电影</a></li>
+			<li><a href="#">音乐</a></li>
+			<li><a href="#">同城</a></li>
+			<li><a href="#">小组</a></li>
+			<li><a href="#">阅读</a></li>
+			<li><a href="#">FM</a></li>
+			<li><a href="#">时间</a></li>
+			<li><a href="#">东西</a></li>
+			<li><a href="#">市集</a></li>
+			<li><a href="#">更多</a></li>
+		</ul>
+		<ul>
+			<li><a href="#">下载豆瓣客户端</a></li>
+			<li><a href="#">登录</a></li>
+			<li><a href="#">注册</a></li>
+		</ul>
+	</div>
+	<!-- 头部LOGO -->
+	<div class="topb">
+		<div class="topb-center">
+			<h2><a href="#">豆瓣同城</a></h2>
+			<select name="" id="" class="topb-form">
+				<option value="北京">北京</option>
+				<option value="上海">上海</option>
+				<option value="广州">广州</option>
+				<option value="武汉">武汉</option>
+			</select>
+			<ul class="topb-ul">
+				<li><a href="#">近期活动</a></li>
+				<li><a href="#">主办方</a></li>
+				<li><a href="#">舞台剧</a></li>
+				<li><a href="#">2017舞台榜单</a></li>
+			</ul>
+			<input type="text" placeholder="活动/舞台剧/地点" class="topb-in">
+		</div>
+	</div>
+	<!-- 主体内容区………………………………………… -->
+	<header>
+		<div class="head-left">
+			<span>热门活动</span>
+			<hr>
+			<!-- 轮播ul -->
+			<div class="swiper-container" id="head-left-topa">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top1.jpg" alt=""><br><br>
+							孟京辉经典戏剧作品
+					</a></div>
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top2.jpg" alt=""><br><br>
+							经典版《暗恋桃花源》|明星版						
+					</a></div>
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top9.jpg" alt=""><br><br>
+							当代戏剧大师彼得.布鲁克作品
+						</a></div>
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top7.jpg" alt=""><br><br>
+							2017第五届深圳国际工业设……	
+						</a></div>
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top4.jpg" alt=""><br><br>
+							海龟先生全国巡演深圳站	
+						</a></div>
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top6.jpg" alt=""><br><br>
+							深圳交响乐团2017-2018年
+						</a></div>
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top3.jpg" alt=""><br><br>
+							周柏豪One Step Closer Pakho ...
+						</a></div>
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top10.jpg" alt=""><br><br>
+							凝听经典——柏林爱乐弦乐四
+						</a></div>
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top2.jpg" alt=""><br><br>
+							“ 纽带 ” 摄影慈善联展 | 献...
+						</a></div>
+					<div class="swiper-slide"><a href="#">
+						<img src="img/top5.jpg" alt=""><br><br>
+							郭顶 “落地之约” 2017巡演 ...
+					</a></div>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+			<!-- 展示面板 -->
+			<div class="head-topb">
+ 				<ul>
+ 					<li><a href="#">音乐》</a></li><br>
+ 					<li><a href="#">小型现场</a></li>
+ 					<li><a href="#">音乐会</a>&nbsp&nbsp<a href="#">演唱会</a></li>
+ 					<li><a href="#">音乐节</a></li>
+ 				</ul>
+				<ul>
+ 					<li><a href="#">戏剧》</a></li><br>
+ 					<li><a href="#">话剧</a>&nbsp<a href="#">音乐剧</a></li>
+ 					<li><a href="#">舞剧</a>&nbsp&nbsp<a href="#">演歌剧</a>&nbsp&nbsp<a href="#">戏剧</a></li>
+ 					<li><a href="#">其他</a></li>
+ 				</ul>
+ 				<ul>
+ 					<li><a href="#">聚会》</a></li><br>
+ 					<li><a href="#">生活</a><a href="#">集市</a><a href="#">摄影</a></li>
+ 					<li><a href="#">外语</a>&nbsp&nbsp<a href="#">桌游</a>&nbsp&nbsp<a href="#">交友</a></li>
+ 					<li><a href="#">美食</a>&nbsp&nbsp<a href="#">排队</a></li>
+ 				</ul>
+ 				<ul>
+ 					<li><a href="#">电影》</a></li><br>
+ 					<li><a href="#">主题放映</a>&nbsp&nbsp<a href="#">影展</a></li>
+ 					<li><a href="#">影院活动</a></li>
+ 					<li>&nbsp</li><!-- 占位用的 -->
+ 				</ul>
+ 				<ul>
+ 					<li><a href="#">其他》</a></li><br>
+ 					<li><a href="#">讲座</a>&nbsp&nbsp<a href="#">展览</a>&nbsp&nbsp<a href="#">运动</a></li>
+ 					<li><a href="#">旅行</a>&nbsp&nbsp<a href="#">公益</a>&nbsp&nbsp<a href="#">赛事</a></li>
+ 					<li><a href="#">课程</a>&nbsp&nbsp<a href="#">亲子</a></li>
+ 				</ul>
+			</div><br>
+			<!-- 音乐板块 -->
+			<ul class="nav nav-tabs" id="yin-btn">
+				<li>音乐</li>
+				<li>&nbsp&nbsp&nbsp</li>
+				<li><a href="#yi1">最热</a></li>
+				<li><a href="#yi2">小型现场</a></li>
+				<li><a href="#yi3">音乐会</a></li>
+				<li><a href="#">更多》</a></li>
+			</ul>
+			<div class="tab-content yin">
+			<!-- 最热 -->
+				<ul class="tab-pane fade in active" id="yi1">
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【万有音乐系】“雪的物语”——熊木杏里出道15周年纪...</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">浪漫中国—理查德·克莱德曼钢琴演奏会</a>
+							<p>
+								12月16日 周六 00:00 - 22:00深圳音乐厅
+							</p><span>45人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日深圳市龙岗体育中心 深圳市...
+							</p><span>28人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30华润深圳湾体育中心＂春茧...
+							</p><span>8人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00根据地酒吧 福田区上步南路...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 小型现场 -->
+				<ul class="tab-pane fade" id="yi2">
+					<li>
+						<div><a href="#"><img src="img/yinyue/xiao/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/xiao/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/xiao/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/xiao/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/xiao/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/xiao/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 音乐会 -->
+				<ul class="tab-pane fade" id="yi3">
+					<li>
+						<div><a href="#"><img src="img/yinyue/hui/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/hui/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/hui/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/hui/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/hui/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/hui/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 演唱会板块 -->
+			<div style="height: 30px;border-bottom: 1px solid #d0d0d0">
+				演唱会
+				<a href="#" style="float: right">更多》</a>
+			</div>
+			<!-- 用的是音乐会的样式 -->
+			<div class="yin">
+				<ul>
+					<li>
+						<div><a href="#"><img src="img/yanchang/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【万有音乐系】“雪的物语”——熊木杏里出道15周年纪...</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yanchang/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">浪漫中国—理查德·克莱德曼钢琴演奏会</a>
+							<p>
+								12月16日 周六 00:00 - 22:00深圳音乐厅
+							</p><span>45人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yanchang/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日深圳市龙岗体育中心 深圳市...
+							</p><span>28人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yanchang/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30华润深圳湾体育中心＂春茧...
+							</p><span>8人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yanchang/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00根据地酒吧 福田区上步南路...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yanchang/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+			<!-- 戏剧……………………………………………… (也是引用音乐的样式)-->
+			<ul class="nav nav-tabs" id="xin-btn">
+				<li>戏剧</li>
+				<li>&nbsp&nbsp&nbsp</li>
+				<li><a href="#xi1">最热</a></li>
+				<li><a href="#xi2">话剧</a></li>
+				<li><a href="#xi3">音乐剧</a></li>
+				<li><a href="#xi4">舞剧</a></li>
+				<li><a href="#xi5">歌剧</a></li>
+				<li><a href="#xi6">戏曲</a></li>
+			</ul>
+			<div class="tab-content yin">
+			<!-- 最热 -->
+				<ul class="tab-pane fade in active" id="xi1">
+					<li>
+						<div><a href="#"><img src="img/xiju/zui/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【万有音乐系】“雪的物语”——熊木杏里出道15周年纪...</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/zui/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">浪漫中国—理查德·克莱德曼钢琴演奏会</a>
+							<p>
+								12月16日 周六 00:00 - 22:00深圳音乐厅
+							</p><span>45人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/zui/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日深圳市龙岗体育中心 深圳市...
+							</p><span>28人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/zui/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30华润深圳湾体育中心＂春茧...
+							</p><span>8人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/zui/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00根据地酒吧 福田区上步南路...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/zui/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 话剧 -->
+				<ul class="tab-pane fade" id="xi2">
+					<li>
+						<div><a href="#"><img src="img/xiju/hua/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/hua/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/hua/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/hua/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/hua/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/hua/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 音乐剧 -->
+				<ul class="tab-pane fade" id="xi3">
+					<li>
+						<div><a href="#"><img src="img/xiju/yin/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/yin/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/yin/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 舞剧 -->
+				<ul class="tab-pane fade" id="xi4">
+					<li>
+						<div><a href="#"><img src="img/xiju/wu/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/wu/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/wu/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/wu/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/wu/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/wu/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 歌剧 -->
+				<ul class="tab-pane fade" id="xi5">
+					<li>
+						<div><a href="#"><img src="img/xiju/ge/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/ge/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/ge/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 戏曲 -->
+				<ul class="tab-pane fade" id="xi6">
+					<li>
+						<div><a href="#"><img src="img/xiju/xi/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/xi/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/xi/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/xi/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/xiju/xi/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 聚会…………………………………………………… (也是引用音乐的样式)-->
+			<ul class="nav nav-tabs" id="ju-btn">
+				<li>聚会</li>
+				<li>&nbsp&nbsp&nbsp</li>
+				<li><a href="#ju1">最热</a></li>
+				<li><a href="#ju2">生活</a></li>
+				<li><a href="#ju3">集市</a></li>
+				<li><a href="#ju4">摄影</a></li>
+				<li><a href="#ju5">外语</a></li>
+				<li><a href="#ju6">桌游</a></li>
+				<li><a href="#ju7">夜店</a></li>
+				<li><a href="#ju8">交友</a></li>
+				<li><a href="#">更多》</a></li>
+			</ul>
+			<div class="tab-content yin">
+				<!-- 最热 -->
+				<ul class="tab-pane fade in active" id="ju1">
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【万有音乐系】“雪的物语”——熊木杏里出道15周年纪...</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">浪漫中国—理查德·克莱德曼钢琴演奏会</a>
+							<p>
+								12月16日 周六 00:00 - 22:00深圳音乐厅
+							</p><span>45人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日深圳市龙岗体育中心 深圳市...
+							</p><span>28人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30华润深圳湾体育中心＂春茧...
+							</p><span>8人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00根据地酒吧 福田区上步南路...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 生活 -->
+				<ul class="tab-pane fade" id="ju2">
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 集市 -->
+				<ul class="tab-pane fade" id="ju3">
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 摄影 -->
+				<ul class="tab-pane fade" id="ju4">
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 外语 -->
+				<ul class="tab-pane fade" id="ju5">
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">English Cooking Party 和歪果仁做美食，学英语</a>
+							<p>
+								11月5日 周日 11:30 - 13:30蛇口东角头
+							</p><span>7人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">英语音乐Open mic、桌游聚会！</a>
+							<p>
+								9月16日 至 11月25日红荔西路缇香名苑商铺20L ...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">雅思托福口语练习</a>
+							<p>
+								9月15日 至 11月9日深圳南山区后海地铁站附近Z...
+							</p><span>9人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【知识e站10/28第33期东部海滨栈道户外英语角徒步聚会...</a>
+							<p>
+								10月28日 至 11月25日盐田中英街
+							</p><span>27人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">英语演讲</a>
+							<p>
+								11月1日 至 11月8日深圳 福田区 振华路21号城...
+							</p><span>2人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Book Exchange</a>
+							<p>
+								8月13日 至 11月5日新天·世纪商务中心B座
+							</p><span>8人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 桌游 -->
+				<ul class="tab-pane fade" id="ju6">
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 夜店 -->
+				<ul class="tab-pane fade" id="ju7" style="text-align: center;height: 350px">
+					这座城市暂时还没有相关活动发布
+				</ul>
+				<!-- 交友 -->
+				<ul class="tab-pane fade" id="ju8">
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">空体夜读丨我害怕阅读的人</a>
+							<p>
+								11月2日 至 11月30日深圳空体新媒体实验室有限公司
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">初次爱你，请多关照【9.9元零基础学会一首钢琴曲，深...</a>
+							<p>
+								9月1日 至 11月30日龙岗地铁3号线大芬站A出口...
+							</p><span>113人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【来浪社交】拒宅丨每周五夜行深圳</a>
+							<p>
+								9月1日 至 11月24日会展中心
+							</p><span>388人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">节气茶席丨 户外·立冬茶会</a>
+							<p>
+								11月7日 周二 15:00 - 18:00南山数字文化产业基地西塔...
+							</p><span>9人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">屋顶换书｜The Rooftop Reading</a>
+							<p>
+								9月30日 至 11月26日少年宫
+							</p><span>81人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">恰同学少年 | 深圳大学CityWalk交友派对</a>
+							<p>
+								10月29日 至 11月26日深圳大学地铁站
+							</p><span>2人关注</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 电影板块…………………………………………………… (也是引用音乐的样式) -->
+			<ul class="nav nav-tabs" id="tv-btn">
+				<li>电影</li>
+				<li>&nbsp&nbsp&nbsp</li>
+				<li><a href="#tv1">最热</a></li>
+				<li><a href="#tv2">主题放映</a></li>
+				<li><a href="#tv3">影展</a></li>
+				<li><a href="#tv4">影院活动</a></li>
+				<li><a href="#">更多》</a></li>
+			</ul>
+			<div class="tab-content yin">
+				<!-- 最热 -->
+				<ul class="tab-pane fade in active" id="tv1">
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【万有音乐系】“雪的物语”——熊木杏里出道15周年纪...</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">浪漫中国—理查德·克莱德曼钢琴演奏会</a>
+							<p>
+								12月16日 周六 00:00 - 22:00深圳音乐厅
+							</p><span>45人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日深圳市龙岗体育中心 深圳市...
+							</p><span>28人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30华润深圳湾体育中心＂春茧...
+							</p><span>8人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00根据地酒吧 福田区上步南路...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 主题放映 -->
+				<ul class="tab-pane fade" id="tv2">
+					<li>
+						<div><a href="#"><img src="https://img3.doubanio.com/view/event_poster/small/public/7db09797ea8576e.jpg" width="75" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 影展 -->
+				<ul class="tab-pane fade" id="tv3">
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 影院活动 -->
+				<ul class="tab-pane fade" id="tv4">
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 讲座板块…………………………………………………… (也是引用音乐的样式) -->
+			<ul class="nav nav-tabs" id="jiang-btn">
+				<li>讲座</li>
+				<li>&nbsp&nbsp&nbsp</li>
+				<li><a href="#jiang1">最热</a></li>
+				<li><a href="#jiang2">发布会</a></li>
+				<li><a href="#jiang3">见面会</a></li>
+				<li><a href="#jiang4">分享会</a></li>
+				<li><a href="#jiang5">沙龙</a></li>
+				<li><a href="#">更多》</a></li>
+			</ul>
+			<div class="tab-content yin">
+				<!-- 最热 -->
+				<ul class="tab-pane fade in active" id="jiang1">
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【万有音乐系】“雪的物语”——熊木杏里出道15周年纪...</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">浪漫中国—理查德·克莱德曼钢琴演奏会</a>
+							<p>
+								12月16日 周六 00:00 - 22:00深圳音乐厅
+							</p><span>45人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日深圳市龙岗体育中心 深圳市...
+							</p><span>28人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30华润深圳湾体育中心＂春茧...
+							</p><span>8人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00根据地酒吧 福田区上步南路...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 发布会 -->
+				<ul class="tab-pane fade" id="jiang2" style="height: 300px;text-align: center">
+					这座城市暂时还没有相关活动发布
+				</ul>
+				<!-- 见面会 -->
+				<ul class="tab-pane fade" id="jiang3">
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 分享会 -->
+				<ul class="tab-pane fade" id="jiang4">
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 沙龙 -->
+				<ul class="tab-pane fade" id="jiang5">
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 展览板块 -->
+			<div style="height: 30px;border-bottom: 1px solid #d0d0d0">
+				展览
+				<a href="#" style="float: right">更多》</a>
+			</div>
+			<div class="tab-content yin">
+				<!-- 最热 -->
+				<ul class="tab-pane fade in active" id="jiang1">
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【万有音乐系】“雪的物语”——熊木杏里出道15周年纪...</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">浪漫中国—理查德·克莱德曼钢琴演奏会</a>
+							<p>
+								12月16日 周六 00:00 - 22:00深圳音乐厅
+							</p><span>45人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日深圳市龙岗体育中心 深圳市...
+							</p><span>28人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30华润深圳湾体育中心＂春茧...
+							</p><span>8人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00根据地酒吧 福田区上步南路...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 发布会 -->
+				<ul class="tab-pane fade" id="jiang2" style="height: 300px;text-align: center">
+					这座城市暂时还没有相关活动发布
+				</ul>
+				<!-- 见面会 -->
+				<ul class="tab-pane fade" id="jiang3">
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 分享会 -->
+				<ul class="tab-pane fade" id="jiang4">
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/jiangzuo/jian/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 沙龙 -->
+				<ul class="tab-pane fade" id="jiang5">
+					<li>
+						<div><a href="#"><img src="img/zhanlan/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/zhanlan/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/zhanlan/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/zhanlan/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/zhanlan/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/zhanlan/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 其他板块…………………………………………… (也是引用音乐的样式)   -->
+			<ul class="nav nav-tabs" id="qi-btn">
+				<li>其他</li>
+				<li>&nbsp&nbsp&nbsp</li>
+				<li><a href="#qi1">最热</a></li>
+				<li><a href="#qi2">运动</a></li>
+				<li><a href="#qi3">公益</a></li>
+				<li><a href="#qi4">旅行</a></li>
+				<li><a href="#qi5">赛事</a></li>
+				<li><a href="#qi6">课程</a></li>
+				<li><a href="#qi7">亲子</a></li>
+				<li><a href="#">更多》</a></li>
+			</ul>
+			<div class="tab-content yin">
+				<!-- 最热 -->
+				<ul class="tab-pane fade in active" id="qi1">
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【万有音乐系】“雪的物语”——熊木杏里出道15周年纪...</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">浪漫中国—理查德·克莱德曼钢琴演奏会</a>
+							<p>
+								12月16日 周六 00:00 - 22:00深圳音乐厅
+							</p><span>45人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日深圳市龙岗体育中心 深圳市...
+							</p><span>28人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30华润深圳湾体育中心＂春茧...
+							</p><span>8人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00根据地酒吧 福田区上步南路...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zui/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30南山文体中心剧院大剧院 深...
+							</p><span>170人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 运动 -->
+				<ul class="tab-pane fade" id="qi2">
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/sheng/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 公益 -->
+				<ul class="tab-pane fade" id="qi3">
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/ji/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 旅行 -->
+				<ul class="tab-pane fade" id="qi4">
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/she/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Tempalay×MONO NO AWARE×ドミコ(domico)日系独立新...</a>
+							<p>
+								11月15日 周三 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>33人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 赛事 -->
+				<ul class="tab-pane fade" id="qi5">
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">English Cooking Party 和歪果仁做美食，学英语</a>
+							<p>
+								11月5日 周日 11:30 - 13:30蛇口东角头
+							</p><span>7人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">英语音乐Open mic、桌游聚会！</a>
+							<p>
+								9月16日 至 11月25日红荔西路缇香名苑商铺20L ...
+							</p><span>6人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">雅思托福口语练习</a>
+							<p>
+								9月15日 至 11月9日深圳南山区后海地铁站附近Z...
+							</p><span>9人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【知识e站10/28第33期东部海滨栈道户外英语角徒步聚会...</a>
+							<p>
+								10月28日 至 11月25日盐田中英街
+							</p><span>27人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">英语演讲</a>
+							<p>
+								11月1日 至 11月8日深圳 福田区 振华路21号城...
+							</p><span>2人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/wai/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">Book Exchange</a>
+							<p>
+								8月13日 至 11月5日新天·世纪商务中心B座
+							</p><span>8人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 课程 -->
+				<ul class="tab-pane fade" id="qi6">
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">11/03 DJ RAYRAY|受邀ADE、ULTRA的她是台湾的首席DJ</a>
+							<p>
+								11月3日 周五 22:00 - 23:30a8音乐大厦裙楼二楼 CLUB S...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">滚吧！生活 木马2017全国巡演深圳站 @B10现场</a>
+							<p>
+								11月17日 周五 20:30 - 22:00华侨城创意园 北区C2栋北侧...
+							</p><span>61人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">手风琴大师Richard Galliano五重奏 中国巡演深圳站 @B...</a>
+							<p>
+								11月13日 周一 20:00 - 21:30华侨城创意园 北区C2栋北侧...
+							</p><span>58人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【芙蓉寺】静心禅修，体验神秘的方外梵音【第26期】（...</a>
+							<p>
+								10月27日 至 12月31日深圳北站西广场b1出口集合...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/zhuo/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">15分钟音乐计划</a>
+							<p>
+								11月3日 至 12月29日梅园路艺展中心三期空中创...
+							</p><span>1人关注</span>
+						</div>
+					</li>
+				</ul>
+				<!-- 亲子 -->
+				<ul class="tab-pane fade" id="qi7">
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">空体夜读丨我害怕阅读的人</a>
+							<p>
+								11月2日 至 11月30日深圳空体新媒体实验室有限公司
+							</p><span>1人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">初次爱你，请多关照【9.9元零基础学会一首钢琴曲，深...</a>
+							<p>
+								9月1日 至 11月30日龙岗地铁3号线大芬站A出口...
+							</p><span>113人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【来浪社交】拒宅丨每周五夜行深圳</a>
+							<p>
+								9月1日 至 11月24日会展中心
+							</p><span>388人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">节气茶席丨 户外·立冬茶会</a>
+							<p>
+								11月7日 周二 15:00 - 18:00南山数字文化产业基地西塔...
+							</p><span>9人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">屋顶换书｜The Rooftop Reading</a>
+							<p>
+								9月30日 至 11月26日少年宫
+							</p><span>81人关注</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/juhui/jiao/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">恰同学少年 | 深圳大学CityWalk交友派对</a>
+							<p>
+								10月29日 至 11月26日深圳大学地铁站
+							</p><span>2人关注</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			</div>
+			<!-- 右边滚动内容 -->
+		<div class="head-right">
+			<button class="btn btn-warning">+发起同城活动</button><br><br><br>
+			<span style="font-size: 16px;display:block;border-bottom:1px solid #ADADAD">购票直通车</span>
+			<!-- 垂直滚动特效 -->
+			<div id="numobj">
+				<ul id="numobj1">
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日周五 20:00 - 21:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a1.jpg" alt=""></a></div>
+						<div>
+							<a href="#">【万有音乐系】“雪的物语”——熊木杏里出道15周年纪...</a>
+							<p>
+								12月22日周五 20:00 - 21:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a2.jpg" alt=""></a></div>
+						<div>
+							<a href="#">浪漫中国—理查德·克莱德曼钢琴演奏会</a>
+							<p>
+								12月16日 周六 00:00 - 22:00
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+				</ul>
+				<ul id="numobj2">
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a3.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017丛林电子音乐节</a>
+							<p>
+								12月9日 至 12月10日
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a6.jpg" alt=""></a></div>
+						<div>
+							<a href="#">文雀乐队11.4红糖罐演出</a>
+							<p>
+								12月22日 周五 20:00 - 21:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a4.jpg" alt=""></a></div>
+						<div>
+							<a href="#">2017叶世荣-黄贯中 冲动效应Impulse演唱会·深圳</a>
+							<p>
+								11月25日 周六 19:30 - 19:30
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+					<li>
+						<div><a href="#"><img src="img/yinyue/zuiren/a5.jpg" alt=""></a></div>
+						<div>
+							<a href="#">耳光乐队2017【毁三GUAN】全国巡演</a>
+							<p>
+								11月4日 周六 20:30 - 22:00
+							</p><span style="color: red">￥150</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 深圳活跃的主办方 -->
+			<div style="margin-top: 30px;border-bottom: solid 1px #E0E0E0;padding-bottom: 5px;">
+				<span style="font-size: 17px">深圳活跃的主办方</span>
+				<a href="#" style="font-size: 10px;float: right;">更多》</a>
+			</div>
+			<!-- 深圳活跃主办方 -->
+			<ul class="right-nav">
+				<li>				
+					<a href="#"><img src="img/a1.jpg" alt=""></a>
+					<p>
+						<a href="#">墨门书院</a><br><br>
+						有4个活动正在进行<br>
+						<a href="#">[运动] 传统射艺 | 一起来学古代人射箭...</a><br>
+						<a href="#">[聚会] 【昆明】手工沙龙第6期 | 艺术扎染</a>
+					</p>
+				</li>
+				<li>				
+					<a href="#"><img src="img/a2.jpg" alt=""></a>
+					<p>
+						<a href="#">旧天堂书店</a><br><br>
+						有1个活动正在进行<br>
+						<a href="#">[其他] 书店塑料人 第24回：MP3专场</a><br>
+						<a href="#">[聚会] 【昆明】手工沙龙第6期 | 艺术扎染</a>	
+					</p>
+				</li>
+				<li>				
+					<a href="#"><img src="img/a3.jpg" alt=""></a>
+					<p>
+						<a href="#">passFUN</a><br><br>
+						有4个活动正在进行<br>
+						<a href="#">[其他] 悬赏丨抓住那只500斤的荷小星！</a><br>
+						<a href="#">[其他] 室内射箭</a>
+					</p>
+				</li>
+				<li>				
+					<a href="#"><img src="img/a1.jpg" alt=""></a>
+					<p>
+						<a href="#">单向空间（原单向街·图书馆）</a><br><br>
+						有2个活动正在进行<br>
+						<a href="#">[讲座] 秋微X叶蓓：文艺青年的温度</a><br>
+						<a href="#">[讲座] 影像时代的创造之道</a>
+					</p>
+				</li>
+				<li>				
+					<a href="#"><img src="img/a5.jpg" alt=""></a>
+					<p>
+						<a href="#">票牛</a><br><br>
+						有3134个活动正在进行<br>
+						<a href="#">[戏剧] 2017第四届云南省小剧场话剧全...</a><br>
+						<a href="#">[戏剧] 2017第四届云南省小剧场话剧全...</a>
+					</p>
+				</li>
+			</ul>
+			<!-- 更多发现 -->
+		<!-- 更多发现 -->
+			<h4>更多发现</h4>
+			<p class="right-sub">
+				<a href="#">
+					<span>同城小组活动</span><br>
+					<span style="color:#6C6C6C;font-size: 12px;">发现玩活动的圈子</span>
+				</a>
+				<a href="#">
+					<span>主办方系列活动</span><br>
+					<span style="color:#6C6C6C;font-size: 12px;">主办方的主体活动</span>
+				</a>
+			</p>
+			<!-- 联系我们 -->
+			<p class="right-em">
+				<span style="font-size: 18px;">联系我们</span><a href="#">event@douban.com</a>
+			</p>
+			<ul class="right-dou">
+				<li>
+					<a href="#"><img src="img/douban/dou.jpg" alt=""></a><br>
+					<a href="#">豆瓣小站</a>
+				</li>
+				<li>
+					<a href="#"><img src="img/douban/xin.jpg" alt=""></a><br>
+					<a href="#">微博</a>
+				</li>
+				<li>
+					<a href="#"><img src="img/douban/wei.jpg" alt=""></a><br>
+					<a href="#">微信</a>
+				</li>
+			</ul>
+			<ul class="right-bottom">
+				<li>RSS</li>
+				<li>></li>
+				<li><a href="#">申请主办方</a></li>
+				<li>></li>
+				<li><a href="#">我要提议</a></li>
+			</ul>			
+		</div>
+	</header>
+	 <!-- 占位  吧底部声明挤到底下 -->
+	<div style="width: 100%;height: 4080px;"></div>
+	<!-- 底部版权声明 -->
+	<footer>
+		© 2005－2017 douban.com, all rights reserved 北京豆网科技有限公司
+		<ul class="foo-ul">
+			<li><a href="#">关于豆瓣</a></li>
+			<li>.</li>
+			<li><a href="#">在豆瓣工作</a></li>
+			<li>.</li>
+			<li><a href="#">联系我们</a></li>
+			<li>.</li>
+			<li><a href="#">免责声明</a></li>
+			<li>.</li>
+			<li><a href="#">帮助中心</a></li>
+			<li>.</li>
+			<li><a href="#">移动应用</a></li>
+			<li>.</li>
+			<li><a href="#">豆瓣广告</a></li>
+		</ul>
+	</footer>
+<script>
+	// 热门活动左右轮播
+	var swiper = new Swiper(".swiper-container",{
+		slidesPerView:5,
+		spaceBetween:30,
+		autoplay:2000,
+		nextButton:".swiper-button-next",
+		prevButton:".swiper-button-prev",
+		loop:true,
+	})
+	//音乐点击切换板块
+	ken("#yin-btn a");
+
+	// 戏剧点击切换板块
+	ken("#xin-btn a");
+
+	//聚会显示切换板块
+	ken("#ju-btn a")
+
+	//电影显示切换板块	
+	ken("#tv-btn a")
+
+	//讲座显示切换板块	
+	ken("#jiang-btn a")
+	
+	//点击切换板块函数封装
+	function ken(id){
+		$(id).on("click",function(){
+			$(this).tab("show")
+		})
+	}
+
+	function Hen(id){ //构造函数
+		$(id).on("click",function(){
+			$(this).tab("show")
+		})
+	}
+	//其他显示切换板块
+	var sum = new Hen("#qi-btn a") //构造函数的调用
+
+	//无缝滚动特效
+	var num = document.getElementById("numobj");// 获取滚动区域
+
+	var num1 = document.getElementById("numobj1");// 获取第一个ul
+	var num2 = document.getElementById("numobj2");
+	num.scrollTop = 0;
+
+	var Gun = setInterval("hen()",40);// 每40毫秒执行一次
+
+	function hen(){
+		if(num.scrollTop >= num1.offsetHeight){ //当滚动区域大于num1时
+			num.scrollTop = 0; // 将混动区域初始化0
+		}else{
+			num.scrollTop++;
+		}
+	}
+	num.onmouseover = function(){ //给滚动区域添加鼠标移入事件
+		clearInterval(Gun); // 鼠标移入停止滚动函数
+	}
+	num.onmouseout = function(){ // 鼠标移出事件 
+		Gun = setInterval("hen()",40) // 运行滚动函数
+	}
+
+</script>
+</body>
+</html>
